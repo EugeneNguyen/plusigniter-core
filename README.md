@@ -19,5 +19,5 @@ PlusIgniter is not a new framework. It's just CodeIgniter with small (but smart,
 
 * Download or clone PlusIgniter source code. Upload to your web server.
 * Config .htaccess, database, route, etc ... just like you do with CodeIgniter.
-* Go to http://<<your-domain>>/module, login with us/pw: admin / admin and start your brand new experienment.
+* Go to http://&lt;your-domain&rt;/module, login with us/pw: admin / admin and start your brand new experienment.
 * Download and install your first library.
