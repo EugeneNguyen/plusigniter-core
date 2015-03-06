@@ -258,6 +258,21 @@
 			 * @return	mixed
 			 */
 				public function do_multi_upload($field){
+					// fixing multi upload name overridden
+					if (!empty($this->file_name))
+					{
+						//Set file name override.
+						$this->_file_name_override = $this->file_name;
+						
+						//Clear multiple file name override.
+						$qty_upload = count($_FILES[$field]["name"]);
+						$multi_file_name = array();
+						for ($i=0; $i < $qty_upload; $i++) { 
+							$multi_file_name[] = $this->file_name . $i;	
+						}
+						$this->_multi_file_name_override = $multi_file_name;
+					}
+					//
 					//Clear multi_upload_data.
 					$this->_multi_upload_data = array();
 					

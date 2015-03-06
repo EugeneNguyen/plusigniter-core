@@ -26,7 +26,7 @@ class Libre_install extends CI_Controller {
 			if (file_exists("./libre_assets/modulemanagement"))
 			$this->delete_folder("./libre_assets/modulemanagement");
 
-			$link = "http://ciplus.libre.com.vn/assets/modules/modulemanagement/modulemanagement.zip";
+			$link = "http://market.plusigniter.com/assets/modules/modulemanagement/modulemanagement.zip";
 			$this -> download_zip($link);
 	
 			$this -> extract_zip("modulemanagement.zip");
