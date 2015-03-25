@@ -30,9 +30,9 @@
     	$l = ($lang = $CI->session->userdata('site_language')) ? $lang : $primary;
     	foreach ($language as $item)
     	{
-      		if ($item->screen == $screen)
+      		if (strtolower($item->screen) == strtolower($screen))
       		{
-        		if ($item->keyname == $key)
+        		if (strtolower($item->keyname) == strtolower($key))
         		{
           			return $item->$l;
         		}
