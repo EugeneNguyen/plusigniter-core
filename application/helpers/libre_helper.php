@@ -53,14 +53,16 @@
     	return "<$tag $string>$content</$tag>";
   	}
 
-  function highslide_anchor ($link, $title)
+  function highslide_anchor ($link, $title, $attribute = array())
   {
-    return html("a", $title, array(
-                                "href" => base_url($link),
-                                "data-toggle" => "modal",
-                                "data-target" => "#modal",
-                                "role"=>"button"
-                              ));
+  	$attr = array(
+            	"href" => base_url($link),
+            	"data-toggle" => "modal",
+            	"data-target" => "#modal",
+            	"role"=>"button"
+          	);
+    $attr+= $attribute;
+    return html("a", $title, $attr);
   }
 
   function bootstrap_anchor ($link, $title, $attribute = array())
