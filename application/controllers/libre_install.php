@@ -10,14 +10,14 @@ class Libre_install extends CI_Controller {
 	{
 		try {
 			// check_permission of modules folder
-			if (!is_writable("./application/modules"))
-			{
-				throw new Exception("please change permission of this folder: /application/modules to 777", 1);
-			}
-			if (!is_writable("./libre_assets"))
-			{
-				throw new Exception("please change permission of this folder: /libre_assets to 777", 1);
-			}
+			// if (!is_writable("./application/modules"))
+			// {
+				// throw new Exception("please change permission of this folder: /application/modules to 777", 1);
+			// }
+			// if (!is_writable("./libre_assets"))
+			// {
+				// throw new Exception("please change permission of this folder: /libre_assets to 777", 1);
+			// }
 			
 			if (file_exists("./application/modules/modulemanagement"))
 			{
@@ -31,14 +31,14 @@ class Libre_install extends CI_Controller {
 	
 			$this -> extract_zip("modulemanagement.zip");
 			// change mode 
-			$this->chmod_r("./application/modules/modulemanagement", 0755);
-			$this->chmod_r("./application/modules/modulemanagement", 0777);
+			// $this->chmod_r("./application/modules/modulemanagement", 0755);
+			// $this->chmod_r("./application/modules/modulemanagement", 0777);
 			// move assets
 			if (file_exists("./application/modules/modulemanagement/modulemanagement"))
 			{
 				rename("./application/modules/modulemanagement/modulemanagement", "./libre_assets/modulemanagement");
-				$this->chmod_r("./libre_assets/modulemanagement", 0755);
-				$this->chmod_r("./libre_assets/modulemanagement", 0777);
+				// $this->chmod_r("./libre_assets/modulemanagement", 0755);
+				// $this->chmod_r("./libre_assets/modulemanagement", 0777);
 			}
 			// import sql
 			if (file_exists('./application/modules/modulemanagement/sql/sql.php'))

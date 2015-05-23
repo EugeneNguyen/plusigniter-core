@@ -38,7 +38,8 @@
         		}
       		}
     	}
-		$CI->load->controller('pluslocalization/add_new_word', array('key'=>$key, 'screen'=>$screen));
+		$CI->pluslocalization_language->add_new_word($key, $screen);
+		// $CI->load->controller('pluslocalization/add_new_word', array('key'=>$key, 'screen'=>$screen));
     	return $key;
   	}
 
@@ -67,7 +68,7 @@
 
   function bootstrap_anchor ($link, $title, $attribute = array())
   {
-    $attr = array("class"=>"", 'href' => base_url($link));
+    $attr = array('href' => base_url($link));
     $attr+= $attribute;
     return html("a", $title, $attr);
   }
