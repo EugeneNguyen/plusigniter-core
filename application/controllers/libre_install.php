@@ -109,6 +109,7 @@ class Libre_install extends CI_Controller {
 		$iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::CHILD_FIRST);
 		
 		foreach ($iterator as $file) {
+			if (substr($file, -1) == "." || substr($file, -1) == "..") continue;
 			if (is_dir($file)) {
 				rmdir($file);
 			} else {
