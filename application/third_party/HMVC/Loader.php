@@ -119,12 +119,12 @@ class HMVC_Loader extends CI_Loader {
 
         // Detect module
         if (list($module, $class) = $this->detect_module($library)) {
-        	
+
             // Module already loaded
             if (in_array($module, $this->_ci_modules)) {
                 return parent::library($class, $params, $object_name);
             }
-			
+
             // Add module
             $this->add_module($module);
 
@@ -379,7 +379,7 @@ class HMVC_Loader extends CI_Loader {
 
             // Add package path
             foreach ($path as $key => $value) {
-				parent::add_package_path($value, $view_cascade);                
+				parent::add_package_path($value, $view_cascade);
             }
         }
     }
@@ -441,8 +441,15 @@ class HMVC_Loader extends CI_Loader {
 
         if (!array_key_exists(strtolower($class), $this->_ci_controllers)) {
             // Determine filepath
-            $filepath = APPPATH . 'controllers/' . $router->fetch_directory() . $class . '.php';
-
+            $filepath;
+            if (strpos($router->fetch_directory(), "..") !== FALSE)
+			{
+            	$filepath = APPPATH . 'controllers/' . $router->fetch_directory() . $class . '.php';
+			}
+			else
+			{
+				$filepath = $router->fetch_directory() . $class . '.php';
+			}
             // Load the controller file
             if (file_exists($filepath)) {
                 include_once ($filepath);

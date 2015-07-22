@@ -35,7 +35,7 @@ class Libre_install extends CI_Controller
 			{
 				require_once './application/modules/modulemanagement/sql/sql.php';
 			}
-
+			$this->session->unset_userdata('lbadmin');
 			redirect("/modulemanagement/");
 		}
 		catch (Exception $e)
@@ -116,7 +116,7 @@ class Libre_install extends CI_Controller
 				continue;
 			if (is_dir($file))
 			{
-				rmdir($file);
+				$this->delete_folder($file);
 			}
 			else
 			{
