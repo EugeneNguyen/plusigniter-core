@@ -1283,8 +1283,7 @@ class CI_DB_driver {
 		// way to deal with this, but I'm not thinking of it -- Rick
 		if (strpos($item, '(') !== FALSE)
 		{
-			// return $item.$alias;
-			return $item;
+			return $item.$alias;
 		}
 
 		// Break the string apart if it contains periods, then insert the table prefix

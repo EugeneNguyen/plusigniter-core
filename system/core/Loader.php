@@ -645,7 +645,6 @@ class CI_Loader {
 	public function add_package_path($path, $view_cascade=TRUE)
 	{
 		$path = rtrim($path, '/').'/';
-
 		array_unshift($this->_ci_library_paths, $path);
 		array_unshift($this->_ci_model_paths, $path);
 		array_unshift($this->_ci_helper_paths, $path);
@@ -882,7 +881,6 @@ class CI_Loader {
 		// The directory path can be included as part of the class name,
 		// but we don't want a leading slash
 		$class = str_replace('.php', '', trim($class, '/'));
-
 		// Was the path included with the class name?
 		// We look for a slash to determine this
 		$subdir = '';
@@ -899,7 +897,6 @@ class CI_Loader {
 		foreach (array(ucfirst($class), strtolower($class)) as $class)
 		{
 			$subclass = APPPATH.'libraries/'.$subdir.config_item('subclass_prefix').$class.'.php';
-
 			// Is this a class extension request?
 			if (file_exists($subclass))
 			{

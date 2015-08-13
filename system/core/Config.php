@@ -161,7 +161,6 @@ class CI_Config {
 			log_message('debug', 'Config file loaded: '.$file_path);
 			break;
 		}
-
 		if ($loaded === FALSE)
 		{
 			if ($fail_gracefully === TRUE)
