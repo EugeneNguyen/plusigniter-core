@@ -161,6 +161,7 @@ class CI_Config {
 			log_message('debug', 'Config file loaded: '.$file_path);
 			break;
 		}
+
 		if ($loaded === FALSE)
 		{
 			if ($fail_gracefully === TRUE)
@@ -169,7 +170,6 @@ class CI_Config {
 			}
 			show_error('The configuration file '.$file.'.php does not exist.');
 		}
-
 		return TRUE;
 	}
 

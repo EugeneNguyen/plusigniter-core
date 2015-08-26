@@ -228,6 +228,7 @@ class HMVC_Loader extends CI_Loader {
      * @return  void
      */
     public function config($file = '', $use_sections = FALSE, $fail_gracefully = FALSE) {
+    	log_message("debug", "===" . $file);
         // Detect module
         if (list($module, $class) = $this->detect_module($file)) {
             // Module already loaded
