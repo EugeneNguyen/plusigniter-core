@@ -124,7 +124,7 @@ function ats($array)
 	$txt = "";
 	foreach ($array as $key => $value)
 	{
-		$txt .= "$key=$value ";
+		$txt .= $key . '="' .$value .'" ';
 	}
 	return $txt;
 }
